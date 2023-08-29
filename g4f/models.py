@@ -10,7 +10,7 @@ class Model:
     class gpt_35_turbo:
         name: str = 'gpt-3.5-turbo'
         base_provider: str = 'openai'
-        best_provider: Provider.Provider = Provider.Theb
+        best_provider: Provider.Provider = Provider.You
 
     class gpt_4:
         name: str = 'gpt-4'
