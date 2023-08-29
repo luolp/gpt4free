@@ -1,0 +1,1 @@
+nohup python3 -m interference.app >/opt/nai.chat/log/gpt4free-run.log 2>&1 &
