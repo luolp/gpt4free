@@ -34,11 +34,11 @@ class Api:
         async def read_root():
             return Response(content=json.dumps({"info": "g4f API"}, indent=4), media_type="application/json")
 
-        @self.app.get("/v1")
+        @self.app.get("")
         async def read_root_v1():
-            return Response(content=json.dumps({"info": "Go to /v1/chat/completions or /v1/models."}, indent=4), media_type="application/json")
+            return Response(content=json.dumps({"info": "Go to /chat/completions or /models."}, indent=4), media_type="application/json")
 
-        @self.app.get("/v1/models")
+        @self.app.get("/models")
         async def models():
             model_list = []
             for model in g4f.Model.__all__():
@@ -53,7 +53,7 @@ class Api:
                 'object': 'list',
                 'data': model_list}, indent=4), media_type="application/json")
 
-        @self.app.get("/v1/models/{model_name}")
+        @self.app.get("/models/{model_name}")
         async def model_info(model_name: str):
             try:
                 model_info = (g4f.ModelUtils.convert[model_name])
@@ -67,7 +67,7 @@ class Api:
             except:
                 return Response(content=json.dumps({"error": "The model does not exist."}, indent=4), media_type="application/json")
 
-        @self.app.post("/v1/chat/completions")
+        @self.app.post("/chat/completions")
         async def chat_completions(request: Request, item: JSONStructure = None):
             item_data = {
                 'model': 'gpt-3.5-turbo',
@@ -179,7 +179,7 @@ class Api:
 
             return StreamingResponse(streaming(), media_type="text/event-stream")
 
-        @self.app.post("/v1/completions")
+        @self.app.post("/completions")
         async def completions():
             return Response(content=json.dumps({'info': 'Not working yet.'}, indent=4), media_type="application/json")
 
