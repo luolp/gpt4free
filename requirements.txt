@@ -17,7 +17,7 @@ pillow
 platformdirs
 numpy
 asgiref
-fastapi
+fastapi==0.103.2
 uvicorn
 flask
 py-arkose-generator
