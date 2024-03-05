@@ -76,13 +76,10 @@ gpt_35_turbo = Model(
     #     GptGo, You,
     #     GptForLove, ChatBase,
     #     Chatgpt4Online,
-    #     ChatAnywhere,
+    #     ChatAnywhere,x
     # ])
     best_provider=RetryProvider([
-        GptGo, You,
-        GptForLove,
-        Chatgpt4Online,
-        ChatAnywhere,
+        GptGo
     ])
 )
 
