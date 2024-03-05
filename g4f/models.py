@@ -73,13 +73,15 @@ gpt_35_turbo = Model(
     name          = 'gpt-3.5-turbo',
     base_provider = 'openai',
     # best_provider=RetryProvider([
-    #     GptGo, You,
-    #     GptForLove, ChatBase,
+    #     GptGo, x
+    #  You,
+    #     GptForLove,
+    #  ChatBase, x
     #     Chatgpt4Online,
     #     ChatAnywhere,x
     # ])
     best_provider=RetryProvider([
-        GptGo
+        You
     ])
 )
 
