@@ -81,7 +81,7 @@ gpt_35_turbo = Model(
     #     ChatAnywhere,x
     # ])
     best_provider=RetryProvider([
-        Liaobots,
+        OpenaiChat,
     ])
 )
 
